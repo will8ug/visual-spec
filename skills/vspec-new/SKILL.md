@@ -16,9 +16,18 @@ Invoke this skill when:
 ## What This Skill Defines
 
 - Fill in details based on scenario-based-facilitation method.
-- Design the data models.
-- Generate UI mockups based on the details filled in.
-- Generate business logic details in visual formats.
+- Output structured requirement documents (markdown specs, flows, and function lists — not runnable code).
+- This skill does NOT generate prototypes, data models, test cases, or implementation code.
+
+## Scope Boundary
+
+This skill ends at requirement analysis output. After completion, use other skills for later stages:
+- `vspec-detail` → per-function detailed specs (RBAC, permissions, validation, interaction, etc.)
+- `vspec-verify` → data models and runnable prototypes
+- `vspec-impl` → backend and frontend code generation
+- `vspec-accept` / `vspec-i-test` → test case generation
+
+Do NOT attempt to proceed beyond requirement analysis within this skill — those stages are handled by separate, purpose-built skills.
 
 ## Command
 
@@ -88,7 +97,7 @@ Flow:
 27. Load `prompts/questions.md` to generate question lists and required business materials.
 28. Write the questions result to `/specs/background/questions.md` (markdown list).
 29. Load `prompts/harness/new/post_new_verify.md` to validate whether functions and scenario_details are complete (login/config/master-data/approval). If it outputs any issues, show the issue list and stop.
-30. Return the structured analysis result and continue to the next requirement-design step.
+30. Return the structured analysis result. STOP. Do NOT proceed to code generation, prototype building, data model creation, or any implementation. The next stages (/vspec:detail, /vspec:verify, /vspec:impl, etc.) are handled by other skills — the user must invoke them separately when ready.
 
 ## Prompt Files
 
@@ -131,11 +140,15 @@ Flow:
 16. Load `prompts/dependencies.md` and generate `/specs/background/dependencies.md`.
 17. Load `prompts/functions.md` and generate `/specs/functions/`.
 18. Load `prompts/questions.md` and generate `/specs/background/questions.md`.
-19. Follow the generated analysis steps to continue the project.
+19. Stop. The analysis phase is complete. Suggest the user proceed with other skills (vspec-detail, vspec-verify, etc.) for the next stages.
 
 ## Output Goal
+
+This skill produces requirement analysis documents only:
 
 - Clarify business objective and core user scenario.
 - Identify key roles, page modules, and interaction flow.
 - Extract entities and main data fields.
-- Produce a visual-spec-oriented requirement draft for the next step.
+- Produce a visual-spec-oriented requirement draft ready for the next stage.
+
+Output is limited to `/specs/background/`, `/specs/flows/`, and `/specs/functions/`. No code, models, or prototypes are generated.
