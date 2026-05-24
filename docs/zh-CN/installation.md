@@ -11,7 +11,7 @@
 ### 安装/更新（推荐：skills.sh）
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec
+npx visual-spec --target /path/to/project
 ```
 
 ### 备选：`vspec` CLI（手动指定目标目录）
@@ -23,7 +23,7 @@ npx visual-spec --help
 npx visual-spec install --target /path/to/your/project --force
 ```
 
-默认安装路径为：`<project>/.trae/skills/visual-spec`。
+默认安装路径为：`<project>/.trae/skills/`。
 
 ### 下一步
 

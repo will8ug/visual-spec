@@ -11,8 +11,8 @@ For the design rationale, quality dimensions, and the fix loop behind QC, see: [
 ### Prepare
 
 - Quality standard file (use whichever path exists in your environment):
-  - Skill root: `/prompts/vspec_qc/quality_standard.md`
-  - Repo source: `skills/visual-spec/prompts/vspec_qc/quality_standard.md`
+  - Skill root: `skills/vspec-qc/prompts/quality_standard.md`
+  - Repo source: `skills/vspec-qc/prompts/quality_standard.md`
 - Your requirement document (PRD/spec/etc.), in Word/PDF/Markdown, etc.
 
 ### How to use (DeepSeek chat as an example)

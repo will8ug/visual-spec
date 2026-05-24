@@ -11,7 +11,7 @@ Recommended: use the official skills.sh installer (the skills CLI) to install in
 ### Install / Update (Recommended: skills.sh)
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec
+npx visual-spec --target /path/to/project
 ```
 
 ### Alternative: `vspec` CLI (manual target)
@@ -23,7 +23,7 @@ npx visual-spec --help
 npx visual-spec install --target /path/to/your/project --force
 ```
 
-By default, it installs to: `<project>/.trae/skills/visual-spec`.
+By default, it installs to: `<project>/.trae/skills/`.
 
 ### Next
 

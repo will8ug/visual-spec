@@ -11,8 +11,8 @@
 ### 准备
 
 - 质量标准文件路径（任选其一，取当前环境存在者）：
-  - Skill 根目录：`/prompts/vspec_qc/quality_standard.md`
-  - 源码路径：`skills/visual-spec/prompts/vspec_qc/quality_standard.md`
+  - Skill 根目录：`skills/vspec-qc/prompts/quality_standard.md`
+  - 源码路径：`skills/vspec-qc/prompts/quality_standard.md`
 - 你的需求文档（PRD、功能说明、规格等），支持 Word/PDF/Markdown 等
 
 ### 使用方式（以 DeepSeek 聊天式 AI 为例）

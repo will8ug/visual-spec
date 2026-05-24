@@ -9,33 +9,33 @@ Recommended: use the official skills.sh installer (the skills CLI). It can insta
 The installer can auto-detect supported agents and prompt you for installation scope (project vs global).
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec
+npx visual-spec --target /path/to/project
 ```
 
 Target a specific agent (examples):
 
 ```bash
 # Trae (project scope)
-npx skills add visual-req/visual-spec --skill visual-spec -a trae
+npx visual-spec --target /path/to/project -a trae
 
 # Claude Code (project scope)
-npx skills add visual-req/visual-spec --skill visual-spec -a claude-code
+npx visual-spec --target /path/to/project -a claude-code
 
 # Cursor (project scope)
-npx skills add visual-req/visual-spec --skill visual-spec -a cursor
+npx visual-spec --target /path/to/project -a cursor
 
 # GitHub Copilot (project scope)
-npx skills add visual-req/visual-spec --skill visual-spec -a github-copilot
+npx visual-spec --target /path/to/project -a github-copilot
 ```
 
 Global install (available across all projects for the current user):
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec -g
+npx visual-spec --target /path/to/project -g
 ```
 
 List skills in this repository:
 
 ```bash
-npx skills add visual-req/visual-spec --list
+npx visual-spec --help
 ```

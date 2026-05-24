@@ -34,5 +34,5 @@
 
 ### 4) 技能实现与提示词（仓库自身）
 
-- `/skills/visual-spec/`：Skill 定义与提示词（命令入口与可复用模板）
-- `/skills/visual-spec/prompts/`：各命令使用的 prompt（new/detail/verify/qc/plan 等）
+- `/skills/`：全部模块化 Skill（每个为独立子目录，如 vspec-new、vspec-detail 等共 16 个）
+- `/skills/*/prompts/`：各 Skill 使用的 prompt 文件

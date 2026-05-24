@@ -11,8 +11,8 @@ QC の設計意図、チェック観点、修正までの閉ループの詳細�
 ### 準備
 
 - 品質標準ファイル（環境に存在する方を使用）：
-  - Skill ルート：`/prompts/vspec_qc/quality_standard.md`
-  - リポジトリ：`skills/visual-spec/prompts/vspec_qc/quality_standard.md`
+  - Skill ルート：`skills/vspec-qc/prompts/quality_standard.md`
+  - リポジトリ：`skills/vspec-qc/prompts/quality_standard.md`
 - 要件ドキュメント（PRD/仕様など）。Word/PDF/Markdown などに対応
 
 ### 使い方（DeepSeek のチャットを例に）

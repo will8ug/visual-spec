@@ -13,7 +13,7 @@ Create the following file in your project root:
 What it’s for:
 - Add domain/industry-specific check points (e.g. compliance, auditability, retention, accounting semantics)
 - When running `/vspec:qc`, standards are merged from:
-  - Built-in standard: `skills/visual-spec/prompts/vspec_qc/quality_standard.md`
+  - Built-in standard: `skills/vspec-qc/prompts/quality_standard.md`
   - Domain standard: `domain_quality_standard.md`
   - Project standard: `quality_standard.md` (if present, highest priority)
 
@@ -25,11 +25,11 @@ Suggested rule format:
 
 Estimation standards are stored as JSON:
 
-- `skills/visual-spec/prompts/vspec_plan/estimation_standards.json`
+- `skills/vspec-plan/prompts/estimation_standards.json`
 
 Reader (single-file HTML, with EN/中文/日本語 switching):
 
-- `skills/visual-spec/prompts/vspec_plan/estimation_standards_reader.html`
+- `skills/vspec-plan/prompts/estimation_standards_reader.html`
 
 During `/vspec:plan` estimation, the model must use this JSON as the shared Story Points baseline (only `0/0.5/1/2/3/5/8/13` are allowed).
 
@@ -43,8 +43,8 @@ How to extend/revise the JSON after forking:
 
 The built-in quality rules are derived from:
 
-- `skills/visual-spec/prompts/vspec_qc/需求分析错题本.xlsx` (source)
-- `skills/visual-spec/prompts/vspec_qc/quality_standard.md` (converted and scan-ready)
+- `skills/vspec-qc/prompts/需求分析错题本.xlsx` (source)
+- `skills/vspec-qc/prompts/quality_standard.md` (converted and scan-ready)
 
 Recommendation:
 - Keep your own mistake book, and promote reusable check points into `domain_quality_standard.md`

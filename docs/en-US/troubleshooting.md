@@ -3,11 +3,11 @@
 ### [`/vspec:*`](../../README.md#commands) commands do not show up in my editor
 
 - Confirm the skill is installed into your editor’s skills directory.
-- If you are using Trae, the default location is usually: `.trae/skills/visual-spec/` under your project.
+- If you are using Trae, the default location is usually: `.trae/skills/` under your project.
 - Reinstall with overwrite:
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec
+npx visual-spec --target /path/to/project
 ```
 
 Or with the built-in CLI (explicit target):
@@ -29,7 +29,7 @@ npx visual-spec --dry-run --target /path/to/your/project
 ### I installed into the wrong directory
 
 - Remove the folder you installed, then install again into the correct project directory:
-  - remove: `<project>/.trae/skills/visual-spec/`
+  - remove: `<project>/.trae/skills/`
   - install: `npx visual-spec install --target <project> --force`
 
 ### Where are the outputs generated?

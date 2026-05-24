@@ -13,7 +13,7 @@
 用途：
 - 業界/ドメイン固有のチェックポイントを補完（例：コンプライアンス、監査、保管/保持、会計口径など）
 - `/vspec:qc` 実行時は次を併せて参照し、優先度に従って統合します：
-  - 組み込み標準：`skills/visual-spec/prompts/vspec_qc/quality_standard.md`
+  - 組み込み標準：`skills/vspec-qc/prompts/quality_standard.md`
   - ドメイン標準：`domain_quality_standard.md`
   - プロジェクト標準：`quality_standard.md`（存在する場合は最優先）
 
@@ -25,11 +25,11 @@
 
 見積の標準値は JSON で管理します：
 
-- `skills/visual-spec/prompts/vspec_plan/estimation_standards.json`
+- `skills/vspec-plan/prompts/estimation_standards.json`
 
 閲覧用（単一 HTML、EN/中文/日本語の切替対応）：
 
-- `skills/visual-spec/prompts/vspec_plan/estimation_standards_reader.html`
+- `skills/vspec-plan/prompts/estimation_standards_reader.html`
 
 `/vspec:plan` の見積フェーズは、この JSON を Story Points の共通口径として参照します（許可される点数は `0/0.5/1/2/3/5/8/13` のみ）。
 
@@ -43,8 +43,8 @@ fork 後に JSON を拡張/修正する方法：
 
 組み込み品質標準は、以下から整備されています：
 
-- `skills/visual-spec/prompts/vspec_qc/需求分析错题本.xlsx`（元データ）
-- `skills/visual-spec/prompts/vspec_qc/quality_standard.md`（スキャン可能な形式に転記）
+- `skills/vspec-qc/prompts/需求分析错题本.xlsx`（元データ）
+- `skills/vspec-qc/prompts/quality_standard.md`（スキャン可能な形式に転記）
 
 推奨：
 - 自組織の “間違い集” を継続更新し、再利用可能なチェックポイントを `domain_quality_standard.md` に蓄積

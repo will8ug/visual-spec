@@ -8,7 +8,7 @@
 
 ## 3 行快速开始
 
-- 安装：`npx skills add visual-req/visual-spec --skill visual-spec`
+- 安装：`npx visual-spec --target /path/to/project`（一次性安装全部 16 个 Skill）
 - 运行：执行 `/vspec:new`，粘贴最小需求（示例如下）
 - 查看产物：执行 `/vspec:verify` → `/specs/prototypes/` 下获得可运行原型
 
@@ -31,8 +31,10 @@
 ## 快速开始（3 步）
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec
+npx visual-spec --target /path/to/project
 ```
+
+这会自动发现并安装全部 16 个模块化 Skill（vspec-new, vspec-detail, vspec-verify 等）以及 `using-vspec` 总览 Skill。
 
 2. 执行 `/vspec:new`，粘贴你的需求文本。
 3. 按提示回答 Open Questions，然后执行 `/vspec:verify` 获取可运行原型进行评审。
@@ -104,8 +106,13 @@ npx skills add visual-req/visual-spec --skill visual-spec
 
 ## 目录结构
 
-- `skills/visual-spec/SKILL.md`：Skill 定义与命令工作流
-- `skills/visual-spec/prompts/`：各命令使用的提示词文件
+- `skills/` — 全部模块化 Skill（每个为独立子目录）
+  - `using-vspec/SKILL.md`：工作流总览与 Skill 索引（入门从这里开始）
+  - `vspec-new/`，`vspec-detail/`，`vspec-verify/`，`vspec-impl/` 等共 15 个功能 Skill
+  - `visual-spec/` — 旧版单体 Skill（保留兼容）
+- `scripts/` — 安装与构建脚本
+- `bin/` — CLI 入口（`vspec` 命令）
+- `docs/` — 文档
 
 ## FAQ
 

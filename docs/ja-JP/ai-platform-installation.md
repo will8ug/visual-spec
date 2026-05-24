@@ -9,33 +9,33 @@
 インストーラは利用可能な agent を自動検出し、プロジェクト単位/グローバル単位のインストールも選択できます。
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec
+npx visual-spec --target /path/to/project
 ```
 
 特定の agent を指定する例：
 
 ```bash
 # Trae（プロジェクト単位）
-npx skills add visual-req/visual-spec --skill visual-spec -a trae
+npx visual-spec --target /path/to/project -a trae
 
 # Claude Code（プロジェクト単位）
-npx skills add visual-req/visual-spec --skill visual-spec -a claude-code
+npx visual-spec --target /path/to/project -a claude-code
 
 # Cursor（プロジェクト単位）
-npx skills add visual-req/visual-spec --skill visual-spec -a cursor
+npx visual-spec --target /path/to/project -a cursor
 
 # GitHub Copilot（プロジェクト単位）
-npx skills add visual-req/visual-spec --skill visual-spec -a github-copilot
+npx visual-spec --target /path/to/project -a github-copilot
 ```
 
 グローバルインストール（ユーザーの全プロジェクトで利用）：
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec -g
+npx visual-spec --target /path/to/project -g
 ```
 
 このリポジトリ内の skills を一覧表示：
 
 ```bash
-npx skills add visual-req/visual-spec --list
+npx visual-spec --help
 ```

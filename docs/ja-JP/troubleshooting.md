@@ -3,11 +3,11 @@
 ### エディタで [`/vspec:*`](../../README.md#commands) が見つからない
 
 - skill がエディタの skills ディレクトリへインストールされているか確認します。
-- Trae の場合、デフォルトは通常プロジェクト配下：`.trae/skills/visual-spec/` です。
+- Trae の場合、デフォルトは通常プロジェクト配下：`.trae/skills/` です。
 - 上書き再インストール：
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec
+npx visual-spec --target /path/to/project
 ```
 
 または内蔵 CLI（インストール先を明示）：
@@ -29,7 +29,7 @@ npx visual-spec --dry-run --target /path/to/your/project
 ### 間違ったディレクトリへ入れてしまった
 
 - 誤った場所のフォルダを削除して、正しいプロジェクトへ入れ直します：
-  - 削除：`<project>/.trae/skills/visual-spec/`
+  - 削除：`<project>/.trae/skills/`
   - インストール：`npx visual-spec install --target <project> --force`
 
 ### 成果物はどこに出力される？

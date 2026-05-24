@@ -59,8 +59,8 @@
 
   <rect class="box" x="420" y="280" width="240" height="210"/>
   <text class="label" x="440" y="315">技能实现：/skills</text>
-  <text class="item muted" x="440" y="345">/skills/visual-spec/（命令与提示词）</text>
-  <text class="item muted" x="440" y="368">/skills/visual-spec/prompts/</text>
+  <text class="item muted" x="440" y="345">/skills/vspec-new/ （ほか 15 スキル）（命令与提示词）</text>
+  <text class="item muted" x="440" y="368">/skills/vspec-new/ （ほか 15 スキル）prompts/</text>
   <text class="item muted" x="440" y="406">注：这是 Skill 本身的代码与模板</text>
   <text class="item muted" x="440" y="429">工作区产物写入 /specs 与 /test</text>
 </svg>

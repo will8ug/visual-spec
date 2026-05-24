@@ -3,11 +3,11 @@
 ### 编辑器里看不到 [`/vspec:*`](../../README.md#commands) 命令
 
 - 确认 skill 已安装到编辑器读取的 skills 目录。
-- 以 Trae 为例，默认通常在项目目录下：`.trae/skills/visual-spec/`。
+- 以 Trae 为例，默认通常在项目目录下：`.trae/skills/`。
 - 重新安装（覆盖更新）：
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec
+npx visual-spec --target /path/to/project
 ```
 
 或使用内置 CLI（显式指定目标目录）：
@@ -29,7 +29,7 @@ npx visual-spec --dry-run --target /path/to/your/project
 ### 安装到错误目录了
 
 - 删除错误安装的目录，然后在正确项目目录重新安装：
-  - 删除：`<project>/.trae/skills/visual-spec/`
+  - 删除：`<project>/.trae/skills/`
   - 安装：`npx visual-spec install --target <project> --force`
 
 ### 产物输出到哪里？

@@ -13,7 +13,7 @@ Install the Skill into your AI editor configuration directory:
 Install / update (skills.sh):
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec
+npx visual-spec --target /path/to/project
 ```
 
 ### 2. Recommended Workflow

@@ -13,7 +13,7 @@
 用途：
 - 用于补充行业/领域特有的质量检查点（例如：医疗/金融/教育/政务等的合规、审计、留存、数据口径约束）
 - 执行 `/vspec:qc` 时会同时扫描：
-  - 内置标准：`skills/visual-spec/prompts/vspec_qc/quality_standard.md`
+  - 内置标准：`skills/vspec-qc/prompts/quality_standard.md`
   - 领域标准：`domain_quality_standard.md`
   - 项目标准：`quality_standard.md`（如存在，优先级最高）
 
@@ -25,11 +25,11 @@
 
 估算标准值以 JSON 形式存放：
 
-- `skills/visual-spec/prompts/vspec_plan/estimation_standards.json`
+- `skills/vspec-plan/prompts/estimation_standards.json`
 
 阅读器（单文件 HTML，支持中/英/日切换）：
 
-- `skills/visual-spec/prompts/vspec_plan/estimation_standards_reader.html`
+- `skills/vspec-plan/prompts/estimation_standards_reader.html`
 
 `/vspec:plan` 的估算阶段会读取该 JSON，作为统一的 Story Points 口径（仅允许 `0/0.5/1/2/3/5/8/13`）。
 
@@ -43,8 +43,8 @@
 
 内置质量规范来自：
 
-- `skills/visual-spec/prompts/vspec_qc/需求分析错题本.xlsx`（原始错题本）
-- `skills/visual-spec/prompts/vspec_qc/quality_standard.md`（从错题本转写后的可扫描规范）
+- `skills/vspec-qc/prompts/需求分析错题本.xlsx`（原始错题本）
+- `skills/vspec-qc/prompts/quality_standard.md`（从错题本转写后的可扫描规范）
 
 建议：
 - 你可以继续维护自己的错题本，并将可复用的检查点沉淀到 `domain_quality_standard.md`

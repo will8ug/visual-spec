@@ -8,7 +8,7 @@
 
 ## 3 行クイックスタート
 
-- インストール：`npx skills add visual-req/visual-spec --skill visual-spec`
+- インストール：`npx visual-spec --target /path/to/project`（16 スキルを一括インストール）
 - 実行：`/vspec:new` を実行し、最小要件（下記）を貼り付け
 - 成果物：`/vspec:verify` → `/specs/prototypes/` に実行可能プロトタイプ
 
@@ -31,8 +31,10 @@
 ## クイックスタート（3 ステップ）
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec
+npx visual-spec --target /path/to/project
 ```
+
+全 16 のモジュール型スキル（vspec-new, vspec-detail, vspec-verify など）と `using-vspec` 概要スキルを自動検出してインストールします。
 
 2. `/vspec:new` を実行し、要件テキストを貼り付けます。
 3. Open Questions に答えた後、`/vspec:verify` を実行して実行可能プロトタイプでレビューします。
@@ -104,8 +106,13 @@ npx skills add visual-req/visual-spec --skill visual-spec
 
 ## Directory Structure
 
-- `skills/visual-spec/SKILL.md`：Skill 定義
-- `skills/visual-spec/prompts/`：各コマンドのプロンプト
+- `skills/` — 全モジュール型スキル（各スキルは独立したサブディレクトリ）
+  - `using-vspec/SKILL.md`：ワークフロー概要とスキルインデックス（最初に読む）
+  - `vspec-new/`，`vspec-detail/`，`vspec-verify/`，`vspec-impl/` など計 15 の機能スキル
+  - `visual-spec/` — 旧版モノリシックスキル（互換性のため保持）
+- `scripts/` — インストール・ビルドスクリプト
+- `bin/` — CLI エントリポイント（`vspec` コマンド）
+- `docs/` — ドキュメント
 
 ## FAQ
 

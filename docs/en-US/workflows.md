@@ -129,5 +129,5 @@ Optional: segmented prototype generation
 ## Installation (skills.sh)
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec
+npx visual-spec --target /path/to/project
 ```
