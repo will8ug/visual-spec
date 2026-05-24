@@ -8,7 +8,7 @@ Version: 0.1.13 (2026-04-12) · License: MIT ([LICENSE](LICENSE))
 
 ## Quick Start (3 Lines)
 
-- Install: `npx skills add visual-req/visual-spec --skill visual-spec`
+- Install: `npx visual-spec --target /path/to/project` (installs all 16 skills at once)
 - Run: `/vspec:new` and paste a minimal requirement (example below)
 - Review outputs: `/vspec:verify` → runnable prototype under `/specs/prototypes/`
 
@@ -30,11 +30,13 @@ After running `/vspec:new` → `/vspec:verify`:
 
 ## Quick Start (3 Steps)
 
-1. Install the Skill into your AI editor configuration directory (Trae / Claude Code / Cursor / GitHub Copilot, etc.):
+1. Install the Skill suite into your AI editor configuration directory:
 
 ```bash
-npx skills add visual-req/visual-spec --skill visual-spec
+npx visual-spec --target /path/to/project
 ```
+
+This auto-discovers and installs all 16 modular skills (vspec-new, vspec-detail, vspec-verify, vspec-impl, etc.) plus the `using-vspec` overview skill.
 
 2. Run `/vspec:new` and paste your requirement.
 3. Answer the open questions, then run `/vspec:verify` to get a runnable prototype for review.
@@ -108,8 +110,27 @@ Reference:
 
 ## Directory Structure
 
-- `skills/visual-spec/SKILL.md`: Skill definition and command workflow
-- `skills/visual-spec/prompts/`: prompt files used by each command
+- `skills/` — All modular skills (each as an independent subdirectory)
+  - `using-vspec/SKILL.md`: Workflow overview and skill index (start here)
+  - `vspec-new/` — `/vspec:new`: baseline requirement artifacts
+  - `vspec-detail/` — `/vspec:detail`: per-function detailed specs
+  - `vspec-verify/` — `/vspec:verify`: data models + runnable prototypes
+  - `vspec-impl/` — `/vspec:impl`: backend + frontend code
+  - `vspec-qc/` — `/vspec:qc`: quality check reports
+  - `vspec-accept/` — `/vspec:accept`: acceptance test cases
+  - `vspec-i-test/` — `/vspec:i-test`: unit + integration test cases
+  - `vspec-script/` — `/vspec:script`: Playwright automation
+  - `vspec-append-test/` — `/vspec:append-test`: framework-specific tests
+  - `vspec-refine/` — `/vspec:refine`, `/vspec:refine-q`, `/vspec:more-q`
+  - `vspec-doc/` — `/vspec:doc`: Word deliverable
+  - `vspec-interview/` — `/vspec:interview`, `/vspec:i-word`
+  - `vspec-mrd/` — `/vspec:mrd`: market research
+  - `vspec-plan/` — `/vspec:plan`: estimation & scheduling
+  - `vspec-upgrade/` — `/vspec:upgrade`: legacy upgrade
+  - `visual-spec/` — Legacy monolithic skill (all commands in one)
+- `scripts/` — Installation and build scripts
+- `bin/` — CLI entry point (`vspec` command)
+- `docs/` — Documentation
 
 ## FAQ
 

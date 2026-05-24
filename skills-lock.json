@@ -80,6 +80,11 @@
       "source": "visual-req/visual-spec",
       "sourceType": "github",
       "skillPath": "skills/vspec-mrd/SKILL.md"
+    },
+    "using-vspec": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/using-vspec/SKILL.md"
     }
   }
 }
