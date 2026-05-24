@@ -4,8 +4,82 @@
     "visual-spec": {
       "source": "visual-req/visual-spec",
       "sourceType": "github",
-      "skillPath": "skills/visual-spec/SKILL.md",
-      "computedHash": "fe8c136c4f19971c4ff5d67645779105bbaf0b7541b136783bd4cb393491178e"
+      "skillPath": "skills/visual-spec/SKILL.md"
+    },
+    "vspec-new": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-new/SKILL.md"
+    },
+    "vspec-detail": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-detail/SKILL.md"
+    },
+    "vspec-verify": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-verify/SKILL.md"
+    },
+    "vspec-impl": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-impl/SKILL.md"
+    },
+    "vspec-qc": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-qc/SKILL.md"
+    },
+    "vspec-accept": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-accept/SKILL.md"
+    },
+    "vspec-interview": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-interview/SKILL.md"
+    },
+    "vspec-refine": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-refine/SKILL.md"
+    },
+    "vspec-doc": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-doc/SKILL.md"
+    },
+    "vspec-i-test": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-i-test/SKILL.md"
+    },
+    "vspec-script": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-script/SKILL.md"
+    },
+    "vspec-append-test": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-append-test/SKILL.md"
+    },
+    "vspec-upgrade": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-upgrade/SKILL.md"
+    },
+    "vspec-plan": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-plan/SKILL.md"
+    },
+    "vspec-mrd": {
+      "source": "visual-req/visual-spec",
+      "sourceType": "github",
+      "skillPath": "skills/vspec-mrd/SKILL.md"
     }
   }
 }

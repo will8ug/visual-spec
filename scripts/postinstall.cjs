@@ -76,34 +76,41 @@ async function main() {
   const { dryRun, force, target, skillDir, skillsDir } = parseArgs(process.argv.slice(2));
 
   const packageRoot = path.resolve(__dirname, "..");
-  const sourceSkillDir = path.join(packageRoot, "skills", "visual-spec");
+  const sourceSkillsDir = path.join(packageRoot, "skills");
   const initCwd = target || process.env.INIT_CWD || process.cwd();
   const resolvedSkillsDir =
     skillsDir && path.resolve(initCwd, skillsDir);
   const resolvedSkillDir =
     skillDir && path.resolve(initCwd, skillDir);
-  const targetSkillDir =
-    resolvedSkillDir ||
-    (resolvedSkillsDir
-      ? path.join(resolvedSkillsDir, "visual-spec")
-      : path.join(initCwd, ".trae", "skills", "visual-spec"));
+  const targetSkillsDir =
+    resolvedSkillsDir ||
+    path.dirname(
+      resolvedSkillDir ||
+      path.join(initCwd, ".trae", "skills", "visual-spec"));
 
-  if (!(await pathExists(sourceSkillDir))) {
-    throw new Error(`Skill source directory not found: ${sourceSkillDir}`);
+  if (!(await pathExists(sourceSkillsDir))) {
+    throw new Error(`Skills source directory not found: ${sourceSkillsDir}`);
   }
 
   if (!force && path.resolve(initCwd) === packageRoot) {
     if (!dryRun) return;
   }
 
-  const targetSkillsDir = path.dirname(targetSkillDir);
+  // Discover all skill directories
+  const sourceEntries = await fs.readdir(sourceSkillsDir, { withFileTypes: true });
+  const skillNames = resolvedSkillDir
+    ? [path.basename(resolvedSkillDir)]  // Single skill install
+    : sourceEntries
+        .filter(e => e.isDirectory() && !e.name.startsWith("."))
+        .map(e => e.name);
 
   if (dryRun) {
     process.stdout.write(
       [
         "[vspec] dry-run",
-        `- source: ${sourceSkillDir}`,
-        `- target: ${targetSkillDir}`,
+        `- source: ${sourceSkillsDir}`,
+        `- target: ${targetSkillsDir}`,
+        `- skills: ${skillNames.join(", ")}`,
       ].join("\n") + "\n",
     );
     return;
@@ -111,13 +118,23 @@ async function main() {
 
   await fs.mkdir(targetSkillsDir, { recursive: true });
 
-  const targetExists = await pathExists(targetSkillDir);
-  if (targetExists && force) {
-    await removeDirRecursive(targetSkillDir);
-  }
+  for (const skillName of skillNames) {
+    const sourceSkillPath = path.join(sourceSkillsDir, skillName);
+    const targetSkillPath = path.join(targetSkillsDir, skillName);
 
-  await copyDirRecursive(sourceSkillDir, targetSkillDir);
-  process.stdout.write(`[vspec] installed to ${targetSkillDir}\n`);
+    if (!(await pathExists(sourceSkillPath))) {
+      process.stderr.write(`[vspec] skill not found: ${skillName}, skipping\n`);
+      continue;
+    }
+
+    const targetExists = await pathExists(targetSkillPath);
+    if (targetExists && force) {
+      await removeDirRecursive(targetSkillPath);
+    }
+
+    await copyDirRecursive(sourceSkillPath, targetSkillPath);
+    process.stdout.write(`[vspec] installed ${skillName} to ${targetSkillPath}\n`);
+  }
 }
 
 main().catch((error) => {

@@ -19,38 +19,47 @@ function main() {
   const repoRoot = getRepoRoot();
   const pkg = readPackageJson(repoRoot);
 
-  const skillDir = path.join(repoRoot, "skills", "visual-spec");
-  if (!fs.existsSync(skillDir)) {
-    throw new Error(`Skill dir not found: ${skillDir}`);
+  const skillsDir = path.join(repoRoot, "skills");
+  if (!fs.existsSync(skillsDir)) {
+    throw new Error(`Skills dir not found: ${skillsDir}`);
   }
 
   const distDir = path.join(repoRoot, "dist");
   ensureDir(distDir);
 
   const version = pkg.version || "0.0.0";
-  const outputPath = path.join(distDir, `visual-spec-${version}.skill`);
 
-  if (fs.existsSync(outputPath)) {
-    fs.rmSync(outputPath);
-  }
+  // Discover all skill directories
+  const skillNames = fs.readdirSync(skillsDir, { withFileTypes: true })
+    .filter(e => e.isDirectory() && !e.name.startsWith("."))
+    .map(e => e.name);
 
-  const result = spawnSync(
-    "zip",
-    ["-r", outputPath, ".", "-x", "*.DS_Store", "-x", "*/.DS_Store"],
-    { cwd: skillDir, stdio: "inherit" }
-  );
+  for (const skillName of skillNames) {
+    const skillPath = path.join(skillsDir, skillName);
+    const outputPath = path.join(distDir, `${skillName}-${version}.skill`);
 
-  if (result.error) {
-    throw new Error(
-      `Failed to run 'zip'. Please ensure 'zip' is installed and available in PATH. ${result.error.message}`
+    if (fs.existsSync(outputPath)) {
+      fs.rmSync(outputPath);
+    }
+
+    const result = spawnSync(
+      "zip",
+      ["-r", outputPath, ".", "-x", "*.DS_Store", "-x", "*/.DS_Store"],
+      { cwd: skillPath, stdio: "inherit" }
     );
-  }
 
-  if (result.status !== 0) {
-    process.exit(result.status);
-  }
+    if (result.error) {
+      throw new Error(
+        `Failed to run 'zip' for ${skillName}. Please ensure 'zip' is installed. ${result.error.message}`
+      );
+    }
 
-  process.stdout.write(`${outputPath}\n`);
+    if (result.status !== 0) {
+      process.exit(result.status);
+    }
+
+    process.stdout.write(`${outputPath}\n`);
+  }
 }
 
 main();
