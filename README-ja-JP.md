@@ -108,8 +108,7 @@ npx visual-spec --target /path/to/project
 
 - `skills/` — 全モジュール型スキル（各スキルは独立したサブディレクトリ）
   - `using-vspec/SKILL.md`：ワークフロー概要とスキルインデックス（最初に読む）
-  - `vspec-new/`，`vspec-detail/`，`vspec-verify/`，`vspec-impl/` など計 15 の機能スキル
-  - `visual-spec/` — 旧版モノリシックスキル（互換性のため保持）
+  - `vspec-new/`，`vspec-detail/`，`vspec-verify/`，`vspec-impl/` など計 16 のスキル
 - `scripts/` — インストール・ビルドスクリプト
 - `bin/` — CLI エントリポイント（`vspec` コマンド）
 - `docs/` — ドキュメント

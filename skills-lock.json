@@ -1,10 +1,10 @@
 {
   "version": 1,
   "skills": {
-    "visual-spec": {
+    "using-vspec": {
       "source": "visual-req/visual-spec",
       "sourceType": "github",
-      "skillPath": "skills/visual-spec/SKILL.md"
+      "skillPath": "skills/using-vspec/SKILL.md"
     },
     "vspec-new": {
       "source": "visual-req/visual-spec",

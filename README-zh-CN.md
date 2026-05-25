@@ -108,8 +108,7 @@ npx visual-spec --target /path/to/project
 
 - `skills/` — 全部模块化 Skill（每个为独立子目录）
   - `using-vspec/SKILL.md`：工作流总览与 Skill 索引（入门从这里开始）
-  - `vspec-new/`，`vspec-detail/`，`vspec-verify/`，`vspec-impl/` 等共 15 个功能 Skill
-  - `visual-spec/` — 旧版单体 Skill（保留兼容）
+  - `vspec-new/`，`vspec-detail/`，`vspec-verify/`，`vspec-impl/` 等共 16 个 Skill
 - `scripts/` — 安装与构建脚本
 - `bin/` — CLI 入口（`vspec` 命令）
 - `docs/` — 文档
