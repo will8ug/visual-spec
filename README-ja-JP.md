@@ -8,7 +8,7 @@
 
 ## 3 行クイックスタート
 
-- インストール：`npx visual-spec --target /path/to/project`（16 スキルを一括インストール）
+- インストール：`npx skills add visual-req/visual-spec`（16 スキルを一括インストール）
 - 実行：`/vspec:new` を実行し、最小要件（下記）を貼り付け
 - 成果物：`/vspec:verify` → `/specs/prototypes/` に実行可能プロトタイプ
 
@@ -31,7 +31,7 @@
 ## クイックスタート（3 ステップ）
 
 ```bash
-npx visual-spec --target /path/to/project
+npx skills add visual-req/visual-spec
 ```
 
 全 16 のモジュール型スキル（vspec-new, vspec-detail, vspec-verify など）と `using-vspec` 概要スキルを自動検出してインストールします。

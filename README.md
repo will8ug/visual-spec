@@ -8,7 +8,7 @@ Version: 0.1.13 (2026-04-12) · License: MIT ([LICENSE](LICENSE))
 
 ## Quick Start (3 Lines)
 
-- Install: `npx visual-spec --target /path/to/project` (installs all 16 skills at once)
+- Install: `npx skills add visual-req/visual-spec` (installs all 16 skills at once)
 - Run: `/vspec:new` and paste a minimal requirement (example below)
 - Review outputs: `/vspec:verify` → runnable prototype under `/specs/prototypes/`
 
@@ -33,7 +33,7 @@ After running `/vspec:new` → `/vspec:verify`:
 1. Install the Skill suite into your AI editor configuration directory:
 
 ```bash
-npx visual-spec --target /path/to/project
+npx skills add visual-req/visual-spec
 ```
 
 This auto-discovers and installs all 16 modular skills (vspec-new, vspec-detail, vspec-verify, vspec-impl, etc.) plus the `using-vspec` overview skill.
